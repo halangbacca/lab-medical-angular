@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="col-md-7 col-lg-8">
+    <div class="search-box">
+      <form class="w-100 me-5" role="search">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Digite o nome ou identificador do paciente"
+          aria-label="Search"
+          (input)="search($event)"
+        />
+      </form>
+    </div>
+    <table class="table" *ngIf="patients.length > 0; else noPatients">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome do paciente</th>
+          <th scope="col">Convênio</th>
+        </tr>
+      </thead>
+      <tbody
+        *ngFor="let patient of filteredPatients"
+        routerLink="/prontuario-do-paciente/{{ patient.id }}"
+      >
+        <tr>
+          <th scope="row">{{ patient.id }}</th>
+          <td>{{ patient.identification.name }}</td>
+          <td>{{ patient.insurance.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #noPatients>
+  <div class="noPatients">
+    <p>Ainda não há pacientes cadastrados!</p>
+  </div>
+</ng-template>

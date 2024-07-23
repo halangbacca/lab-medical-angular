@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Encontre o paciente:</h4>
+    <div class="search-box">
+      <form class="w-100 me-5" role="search">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Digite o nome, e-mail ou telefone do paciente"
+          aria-label="Search"
+          (input)="search($event)"
+        />
+      </form>
+    </div>
+    <h4 class="mb-3">Consulta de {{ patient.identification.name }}:</h4>
+    <h5>CPF: {{ patient.identification.cpf }}</h5>
+    <h5>Data de nascimento: {{ patient.identification.birth }}</h5>
+    <h5>Gênero: {{ patient.identification.gender }}</h5>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-12">
+          <label for="reason-appointment" class="form-label"
+            >Motivo da consulta:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reason-appointment"
+            id="reason-appointment"
+            placeholder="Digite o motivo da consulta"
+            required
+            [(ngModel)]="appointment.motive"
+          />
+          <div class="valid-feedback">Validado</div>
+          <div class="invalid-feedback">Digite o motivo da consulta</div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="date" class="form-label">Data da consulta:</label>
+          <input
+            type="date"
+            class="form-control"
+            name="date"
+            id="date"
+            required
+            [(ngModel)]="appointment.date"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="time" class="form-label">Hora da consulta:</label>
+          <input
+            type="time"
+            class="form-control"
+            name="time"
+            id="time"
+            required
+            [(ngModel)]="appointment.time"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="problem-description" class="form-label"
+            >Descrição do problema:</label
+          >
+          <textarea
+            class="form-control"
+            name="problem-description"
+            id="problem-description"
+            rows="10"
+            placeholder="Digite a descrição do problema"
+            required
+            [(ngModel)]="appointment.description"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="prescription" class="form-label"
+            >Medicação receitada:</label
+          >
+          <textarea
+            class="form-control"
+            name="prescription"
+            id="prescription"
+            rows="5"
+            placeholder="Digite a medicação receitada"
+            required
+            [(ngModel)]="appointment.medication"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="dosage-precautions" class="form-label"
+            >Dosagem e precauções:</label
+          >
+          <textarea
+            class="form-control"
+            name="dosage-precautions"
+            id="dosage-precautions"
+            rows="5"
+            placeholder="Digite a dosagem e as precauções"
+            required
+            [(ngModel)]="appointment.precautions"
+          ></textarea>
+        </div>
+      </div>
+
+      <button class="w-10 btn btn-primary btn-lg" (click)="createAppointment()">
+        Salvar
+      </button>
+      <button class="w-10 btn btn-danger btn-lg" (click)="cancel()">
+        Cancelar
+      </button>
+    </form>
+  </div>
+</div>

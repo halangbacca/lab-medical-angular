@@ -1,0 +1,102 @@
+<mat-vertical-stepper class="stepper">
+  <mat-step [completed]="false" label="Identificação do paciente">
+    <div class="patient">
+      <h3>{{ patient.identification.name }}</h3>
+      <h5>Idade: {{ patient.identification.birth | age }}</h5>
+      <h5>Convênio: {{ patient.insurance.name }}</h5>
+      <h5>Contato de emergência: {{ patient.identification.emergencyContact }}</h5>
+      <h5>Alergias: {{ patient.identification.allergy }}</h5>
+      <h5>Cuidados específicos: {{ patient.identification.care }}</h5>
+    </div>
+    <button routerLink="/editar-paciente/{{ patient.id }}">Editar paciente</button>
+    <button matStepperNext>Próximo</button>
+  </mat-step>
+  <mat-step [completed]="false" label="Consultas">
+    <div>
+      <table class="table" *ngIf="appointments.length > 0; else noAppointments">
+        <thead>
+          <tr>
+            <th scope="col">Edição</th>
+            <th scope="col">ID</th>
+            <th scope="col">Motivo</th>
+            <th scope="col">Data</th>
+            <th scope="col">Horário</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Medicação</th>
+            <th scope="col">Dosagem</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let appointment of appointments">
+          <tr>
+            <th scope="row">
+              <button routerLink="/editar-consulta/{{ appointment.id }}">
+                Editar
+              </button>
+            </th>
+            <td>{{ appointment.id }}</td>
+            <td>{{ appointment.motive }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time }}</td>
+            <td>{{ appointment.description }}</td>
+            <td>{{ appointment.medication }}</td>
+            <td>{{ appointment.precautions }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button matStepperPrevious>Anterior</button>
+      <button matStepperNext>Próximo</button>
+    </div>
+  </mat-step>
+  <mat-step [completed]="false" label="Exames">
+    <table class="table" *ngIf="exams.length > 0; else noExams">
+      <thead>
+        <tr>
+          <th scope="col">Edição</th>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Laboratório</th>
+          <th scope="col">Data</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Anexo</th>
+          <th scope="col">Resultado</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let exam of exams">
+        <tr>
+          <th scope="row">
+            <button routerLink="/editar-exame/{{ exam.id }}">Editar</button>
+          </th>
+          <td>{{ exam.id }}</td>
+          <td>{{ exam.name }}</td>
+          <td>{{ exam.lab }}</td>
+          <td>{{ exam.date }}</td>
+          <td>{{ exam.time }}</td>
+          <td>{{ exam.type }}</td>
+          <ng-template #noUrl>
+            <td>Não há exames anexados!</td>
+          </ng-template>
+          <td class="link" *ngIf="exam.url != ''; else noUrl">
+            <a href="{{ exam.url }}" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+              <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+            </svg></a>
+          </td>
+          <td>{{ exam.result }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button matStepperPrevious>Anterior</button>
+  </mat-step>
+</mat-vertical-stepper>
+
+<ng-template #noAppointments>
+  <div class="noAppointments">
+    <p>Ainda não há consultas cadastradas!</p>
+  </div>
+</ng-template>
+
+<ng-template #noExams>
+  <div class="noExams">
+    <p>Ainda não há exames cadastrados!</p>
+  </div>
+</ng-template>

@@ -1,0 +1,69 @@
+<div class="title">
+  <img src="/assets/img/title-color.png" alt="Logo LABMedical" />
+</div>
+
+<div class="container">
+  <div class="image">
+    <img src="/assets/img/login.png" alt="Logo LABMedical" />
+  </div>
+
+  <div class="vl"></div>
+
+  <div class="create-user">
+    <button type="button" class="btn btn-primary" routerLink="/login">
+      Voltar a página inicial
+    </button>
+  </div>
+</div>
+
+<div class="input">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nome:</label>
+    <input
+      type="name"
+      class="form-control"
+      name="name"
+      id="name"
+      placeholder="Digite o seu nome"
+      [(ngModel)]="user.name"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail:</label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      id="email"
+      placeholder="Digite o seu e-mail"
+      (blur)="duplicatedUser()"
+      [(ngModel)]="user.email"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Senha:</label>
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      id="password"
+      placeholder="Digite a sua senha"
+      [(ngModel)]="user.password"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="confirm-password" class="form-label">Confirmar senha:</label>
+    <input
+      type="password"
+      class="form-control"
+      name="confirm-password"
+      id="confirm-password"
+      placeholder="Digite novamente a sua senha"
+      [(ngModel)]="newPassword"
+    />
+  </div>
+  <button type="button" class="btn btn-primary" (click)="confirmPassword()">
+    Criar usuário
+  </button>
+</div>

@@ -1,0 +1,21 @@
+.stepper {
+  position: relative;
+  left: 240px;
+  bottom: 670px;
+  width: 80%;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #6dabfc;
+}
+
+.link {
+  cursor: pointer;
+}

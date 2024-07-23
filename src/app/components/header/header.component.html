@@ -1,0 +1,48 @@
+<header class="py-3 mb-3 border-bottom">
+  <div
+    class="container-fluid d-grid gap-1 align-items-center"
+    style="grid-template-columns: 1fr 5fr"
+  >
+    <nav class="navbar">
+      <div class="container-fluid">
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasScrolling"
+          aria-controls="offcanvasScrolling"
+        >
+          &#9776;
+        </button>
+      </div>
+    </nav>
+
+    <div class="d-flex align-items-center session">
+      <div class="w-100 me-5">
+        <h4>
+          {{ currentSession }}
+        </h4>
+      </div>
+
+      <strong class="doctor">{{ currentUser }}</strong>
+      <div class="flex-shrink-0 dropdown">
+        <a
+          class="d-block link-dark text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="assets/img/patient.png"
+            alt="user"
+            width="32"
+            height="32"
+            class="rounded-circle"
+          />
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          <li><a class="dropdown-item" (click)="logout()">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

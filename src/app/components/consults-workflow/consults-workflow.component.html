@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="col-md-7 col-lg-8">
+    <div class="search-box">
+      <form class="w-100 me-5" role="search">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Digite o nome ou CPF do paciente ou a data ou horário da consulta"
+          aria-label="Search"
+          (input)="search($event)"
+        />
+      </form>
+    </div>
+    <table class="table" *ngIf="appointments.length > 0; else noAppointments">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Motivo da consulta</th>
+          <th scope="col">Nome do paciente</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Data da consulta</th>
+          <th scope="col">Horário da consulta</th>
+        </tr>
+      </thead>
+      <tbody
+        *ngFor="let appointment of filteredAppointments"
+        routerLink="/editar-consulta/{{ appointment.id }}"
+      >
+        <tr>
+          <th scope="row">{{ appointment.id }}</th>
+          <td>{{ appointment.motive }}</td>
+          <td>{{ appointment.patientName }}</td>
+          <td>{{ appointment.patientIdentification }}</td>
+          <td>{{ appointment.date }}</td>
+          <td>{{ appointment.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #noAppointments>
+  <div class="noAppointments">
+    <p>Ainda não há consultas cadastradas!</p>
+  </div>
+</ng-template>

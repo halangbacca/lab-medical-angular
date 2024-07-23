@@ -1,0 +1,6 @@
+<main *ngIf="autenticated === true; else noAutenticated">
+  <app-home></app-home>
+</main>
+<ng-template #noAutenticated>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  left: 370px;
+  bottom: 670px;
+  text-align: center;
+  margin: 0 0 1em 0;
+  gap: 20px;
+}
+
+.search-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+}
+
+tbody th,
+tbody td {
+  cursor: pointer;
+}

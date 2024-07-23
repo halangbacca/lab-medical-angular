@@ -1,0 +1,49 @@
+<div class="title">
+  <img src="/assets/img/title-color.png" alt="Logo LABMedical" />
+</div>
+
+<div class="container">
+  <div class="image">
+    <img src="/assets/img/login.png" alt="Logo LABMedical" />
+  </div>
+
+  <div class="vl"></div>
+
+  <div class="create-account">
+    <p>Não possui conta?</p>
+    <button type="button" class="btn btn-primary" routerLink="/cadastro">
+      Criar conta
+    </button>
+  </div>
+</div>
+
+<div class="input">
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail:</label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      id="email"
+      placeholder="Digite o seu e-mail"
+      [(ngModel)]="user.email"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Senha:</label>
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      id="password"
+      placeholder="Digite a sua senha"
+      [(ngModel)]="user.password"
+    />
+  </div>
+  <button type="button" class="btn btn-primary" (click)="login()">
+    Entrar
+  </button>
+  <p class="forgotPassword" routerLink="/recuperar-senha">
+    Esqueceu sua senha?
+  </p>
+</div>

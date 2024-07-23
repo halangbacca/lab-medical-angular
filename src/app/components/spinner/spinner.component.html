@@ -1,0 +1,6 @@
+<div *ngIf="loaderService.isLoading$ | async" class="loader-container">
+  <mat-spinner
+    [mode]="'indeterminate'"
+    style="top: 50%; left: 50%"
+  ></mat-spinner>
+</div>

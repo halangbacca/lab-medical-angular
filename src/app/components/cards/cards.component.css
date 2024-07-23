@@ -1,0 +1,75 @@
+* {
+  border: none;
+  border-radius: 0;
+}
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 50%;
+  left: 250px;
+  bottom: 690px;
+}
+
+.card {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 0.6em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: 0.4s;
+  margin-bottom: 20px;
+}
+
+.card-group {
+  margin-top: 20px;
+  position: relative;
+  width: 50%;
+  left: 420px;
+  bottom: 690px;
+  text-align: center;
+  margin: 0 0 1em 0;
+  gap: 20px;
+}
+
+.card-img-top {
+  width: 30%;
+}
+
+.card:hover {
+  background-color: #6dabfc;
+}
+
+.patient:hover {
+  cursor: pointer;
+}
+
+.patient-card {
+  margin-top: 20px;
+  position: relative;
+  width: 50%;
+  left: 420px;
+  bottom: 690px;
+  text-align: center;
+}
+
+.search-box {
+  margin-top: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  width: 50%;
+  left: 420px;
+  bottom: 690px;
+  padding: 10px;
+  text-align: center;
+}
+
+.noPatients {
+  margin-top: 20px;
+  position: relative;
+  width: 50%;
+  left: 420px;
+  bottom: 650px;
+  text-align: center;
+}

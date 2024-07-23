@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  left: 410px;
+  bottom: 670px;
+  text-align: center;
+  margin: 0 0 1em 0;
+  gap: 20px;
+}
+
+h4 {
+  position: relative;
+  right: 170px;
+  text-align: left;
+}
+
+.container label {
+  font-weight: 500;
+}
+
+button {
+  position: relative;
+  left: 222px;
+  margin-right: 10px;
+  margin-top: 20px;
+}

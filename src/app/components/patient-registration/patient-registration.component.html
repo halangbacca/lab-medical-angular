@@ -1,0 +1,319 @@
+<div class="container">
+  <div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Identificação:</h4>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-12">
+          <label for="name" class="form-label needs-validation" novalidate
+            >Nome completo:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Digite o nome completo do paciente"
+            [(ngModel)]="patient.identification.name"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="gender" class="form-label">Gênero:</label>
+          <select
+            class="form-select"
+            id="gender"
+            name="gender"
+            [(ngModel)]="patient.identification.gender"
+          >
+            <option hidden value="">Selecione</option>
+            <option>Homem cisgênero</option>
+            <option>Mulher cisgênero</option>
+            <option>Homem transgênero</option>
+            <option>Mulher transgênero</option>
+            <option>Não-binário</option>
+            <option>Outros</option>
+          </select>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="birth" class="form-label">Data de nascimento:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="birth"
+            name="birth"
+            placeholder="Digite a data de nascimento"
+            [(ngModel)]="patient.identification.birth"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="cpf" class="form-label">CPF:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cpf"
+            name="cpf"
+            placeholder="Digite o número do CPF do paciente"
+            (blur)="duplicatedPatient()"
+            [(ngModel)]="patient.identification.cpf"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="rg" class="form-label">RG:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rg"
+            name="rg"
+            placeholder="Digite o número da identidade do paciente"
+            [(ngModel)]="patient.identification.rg"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="civil-state" class="form-label">Estado civil:</label>
+          <select
+            class="form-select"
+            id="civil-state"
+            name="civil-state"
+            [(ngModel)]="patient.identification.relationship"
+          >
+            <option value="">Selecione</option>
+            <option>Casado(a)</option>
+            <option>Solteiro(a)</option>
+            <option>Viúvo(a)</option>
+            <option>Divorciado(a)</option>
+            <option>Outro(a)</option>
+          </select>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="phone" class="form-label">Telefone:</label>
+          <input
+            type="phone"
+            class="form-control"
+            id="phone"
+            name="phone"
+            placeholder="Digite o número de telefone do paciente"
+            [(ngModel)]="patient.identification.phone"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="email" class="form-label">E-mail:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Digite o e-mail do paciente"
+            [(ngModel)]="patient.identification.email"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="nationality" class="form-label">Naturalidade:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nationality"
+            name="nationality"
+            placeholder="Digite a naturalidade do paciente"
+            [(ngModel)]="patient.identification.nationality"
+          />
+        </div>
+
+        <div class="col-sm-12">
+          <label for="allergy" class="form-label">Alergias:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="allergy"
+            name="allergy"
+            placeholder="Informe se o paciente possui alguma alergia"
+            [(ngModel)]="patient.identification.allergy"
+          />
+        </div>
+
+        <div class="col-sm-12">
+          <label for="care" class="form-label">Cuidados específicos:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="care"
+            name="care"
+            placeholder="Informe se o paciente possui cuidados específicos"
+            [(ngModel)]="patient.identification.care"
+          />
+        </div>
+
+        <div class="col-sm-12">
+          <label for="emergency-contact" class="form-label"
+            >Contato de emergência:</label
+          >
+          <input
+            type="phone"
+            class="form-control"
+            id="emergency-contact"
+            name="emergency-contact"
+            placeholder="Informe um contato de emergência"
+            [(ngModel)]="patient.identification.emergencyContact"
+          />
+        </div>
+      </div>
+
+      <hr class="my-4" />
+
+      <h4 class="mb-3">Convênio:</h4>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="health-insurance" class="form-label">Convênio:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="health-insurance"
+            name="health-insurance"
+            placeholder="Digite o convênio do paciente"
+            [(ngModel)]="patient.insurance.name"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="insurance-number" class="form-label"
+            >Número da carteira:</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="insurance-number"
+            name="insurance-number"
+            placeholder="Digite o número carteira do paciente"
+            [(ngModel)]="patient.insurance.number"
+          />
+        </div>
+
+        <div class="col-sm-12">
+          <label for="validity" class="form-label">Validade:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="validity"
+            name="validity"
+            placeholder="Digite a validade do convênio do paciente"
+            [(ngModel)]="patient.insurance.validity"
+          />
+        </div>
+      </div>
+
+      <hr class="my-4" />
+
+      <h4 class="mb-3">Endereço:</h4>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="cep" class="form-label">CEP:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cep"
+            name="cep"
+            placeholder="Digite o CEP do paciente"
+            (blur)="consultCep(applyFilter($event))"
+            [(ngModel)]="patient.address.cep"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="city" class="form-label">Cidade:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            placeholder="Digite a cidade de residência do paciente"
+            [(ngModel)]="patient.address.city"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="state" class="form-label">Estado:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="state"
+            name="state"
+            placeholder="Digite o estado de residência do paciente"
+            [(ngModel)]="patient.address.state"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="street" class="form-label">Logradouro:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="street"
+            name="street"
+            placeholder="Digite o endereço do paciente"
+            [(ngModel)]="patient.address.street"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="number" class="form-label">Número:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="number"
+            name="number"
+            placeholder="Digite o número da residência do paciente"
+            [(ngModel)]="patient.address.number"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="complement" class="form-label">Complemento:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="complement"
+            name="complement"
+            placeholder="Digite o complemento"
+            [(ngModel)]="patient.address.complement"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="neighborhood" class="form-label">Bairro:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="neighborhood"
+            name="neighborhood"
+            placeholder="Digite o bairro de residência do paciente"
+            [(ngModel)]="patient.address.neighborhood"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <label for="reference" class="form-label">Ponto de referência:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="reference"
+            name="reference"
+            placeholder="Digite um ponto de referência"
+            [(ngModel)]="patient.address.reference"
+          />
+        </div>
+      </div>
+
+      <button class="w-10 btn btn-primary btn-lg" (click)="createPatient()">
+        Salvar
+      </button>
+
+      <button class="w-10 btn btn-danger btn-lg" (click)="cancel()">Cancelar</button>
+    </form>
+  </div>
+</div>

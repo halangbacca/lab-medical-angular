@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="col-md-7 col-lg-8">
+    <div class="search-box">
+      <form class="w-100 me-5" role="search">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Digite o nome ou CPF do paciente ou a data ou horário do exame"
+          aria-label="Search"
+          (input)="search($event)"
+        />
+      </form>
+    </div>
+    <table class="table" *ngIf="exams.length > 0; else noExams">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome do exame</th>
+          <th scope="col">Nome do paciente</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Data do exame</th>
+          <th scope="col">Horário do exame</th>
+        </tr>
+      </thead>
+      <tbody
+        *ngFor="let exam of filteredExams"
+        routerLink="/editar-exame/{{ exam.id }}"
+      >
+        <tr>
+          <th scope="row">{{ exam.id }}</th>
+          <td>{{ exam.name }}</td>
+          <td>{{ exam.patientName }}</td>
+          <td>{{ exam.patientIdentification }}</td>
+          <td>{{ exam.date }}</td>
+          <td>{{ exam.time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #noExams>
+  <div class="noExams">
+    <p>Ainda não há exames cadastrados!</p>
+  </div>
+</ng-template>

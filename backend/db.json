@@ -1,0 +1,162 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Halan Germano Bacca",
+      "email": "halanbacca@outlook.com",
+      "password": "qwe12alanwake"
+    }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "identification": {
+        "name": "Halan Bacca",
+        "gender": "Homem cisgênero",
+        "birth": "1998-07-21",
+        "cpf": "110.861.220-20",
+        "rg": "30.478.320-1",
+        "relationship": "Solteiro(a)",
+        "phone": "(49) 2053-7274",
+        "email": "halangermano@hotmail.com.br",
+        "nationality": "Itajaiense",
+        "allergy": "AAS",
+        "care": "O paciente não possui cuidados específicos",
+        "emergencyContact": "47997200499"
+      },
+      "insurance": {
+        "name": "SUS",
+        "number": 123456789,
+        "validity": "2025-07-21"
+      },
+      "address": {
+        "cep": "88309-000",
+        "city": "Itajaí",
+        "state": "SC",
+        "street": "Rua São Joaquim",
+        "number": 137,
+        "complement": "Casa",
+        "neighborhood": "São Vicente",
+        "reference": "Em frente ao banco"
+      }
+    },
+    {
+      "id": 2,
+      "identification": {
+        "name": "Luciana Lamim",
+        "gender": "Mulher cisgênero",
+        "birth": "1966-05-26",
+        "cpf": "054.904.280-66",
+        "rg": "39.444.235-0",
+        "relationship": "Casado(a)",
+        "phone": "(48) 3951-6745",
+        "email": "lucianalamim@outlook.com",
+        "nationality": "Itajaiense",
+        "allergy": "Dipirona",
+        "care": "O paciente possui hipertensão e diabetes tipo II",
+        "emergencyContact": "(48) 3951-6745"
+      },
+      "insurance": {
+        "name": "UNIMED",
+        "number": 123456789,
+        "validity": "2028-05-26"
+      },
+      "address": {
+        "cep": "88309-010",
+        "city": "Itajaí",
+        "state": "SC",
+        "street": "Rua Abelardo Luz",
+        "number": 163,
+        "complement": "Casa",
+        "neighborhood": "São Vicente",
+        "reference": ""
+      }
+    },
+    {
+      "id": 3,
+      "identification": {
+        "name": "Arnaldo Bacca",
+        "gender": "Homem cisgênero",
+        "birth": "1967-05-09",
+        "cpf": "494.190.190-80",
+        "rg": "13.084.454-8",
+        "relationship": "Casado(a)",
+        "phone": "(49) 2758-2688",
+        "email": "arnaldobacca@outlook.com",
+        "nationality": "Itajaiense",
+        "allergy": "Amoxicilina",
+        "care": "O paciente não possui cuidados específicos",
+        "emergencyContact": "(49) 2758-2688"
+      },
+      "insurance": {
+        "name": "SUS",
+        "number": 123456789,
+        "validity": "2030-01-01"
+      },
+      "address": {
+        "cep": "88302-520",
+        "city": "Itajaí",
+        "state": "SC",
+        "street": "Rua Lúcio Corrêa de Mendonça",
+        "number": 439,
+        "complement": "Apartamento",
+        "neighborhood": "Fazenda",
+        "reference": ""
+      }
+    }
+  ],
+  "exams": [
+    {
+      "id": 1,
+      "patientIdentification": "110.861.220-20",
+      "patientName": "Halan Bacca",
+      "doctorName": "Halan Germano Bacca",
+      "name": "Biópsia de lesão cutânea",
+      "date": "2023-02-04",
+      "time": "22:06:43",
+      "type": "Biópsia",
+      "lab": "Laboratório Municipal",
+      "url": "",
+      "result": "Crescimento do fungo Sporothrix schenckii em amostra de biópsia cutânea."
+    },
+    {
+      "id": 2,
+      "patientIdentification": "054.904.280-66",
+      "patientName": "Luciana Lamim",
+      "doctorName": "Halan Germano Bacca",
+      "name": "Hemograma",
+      "date": "2023-02-04",
+      "time": "22:12:53",
+      "type": "Hemograma",
+      "lab": "Laboratório Municipal",
+      "url": "https://www.fleury.com.br/medico/artigos-cientificos/hemograma-tipico-da-dengue-vai-muito-alem-da-plaquetopenia-mostra-revisao-revista-medica-ed-5-2015",
+      "result": "Hemograma apresentava leucopenia, trombocitopenia e atipia linfocitária."
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "patientIdentification": "110.861.220-20",
+      "patientName": "Halan Bacca",
+      "doctorName": "Halan Germano Bacca",
+      "motive": "Possível caso de esporotricose humana ",
+      "date": "2023-02-04",
+      "time": "22:04:25",
+      "description": "Paciente relata arranhadura de gato de rua que apresentava lesões cutâneas características de esporotricose.",
+      "medication": "Fluconazol.",
+      "precautions": "Por tratar-se de uma medicação hepatotóxica, é recomendável o uso semanal de 150 mg durante 4 meses."
+    },
+    {
+      "id": 2,
+      "patientIdentification": "054.904.280-66",
+      "patientName": "Luciana Lamim",
+      "doctorName": "Halan Germano Bacca",
+      "motive": "Possível caso de dengue",
+      "date": "2023-02-04",
+      "time": "22:10:24",
+      "description": "Paciente com febre alta, dor de cabeça, fadiga, dor no corpo, articulações e atrás dos olhos.",
+      "medication": "Paracetamol 500 mg.",
+      "precautions": "Uso diário de 8 em 8 horas durante 14 dias."
+    }
+  ]
+}
